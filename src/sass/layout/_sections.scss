@@ -1,0 +1,218 @@
+@use 'components/section-styles' as *;
+@use 'utilities/colors' as *;
+
+
+//ABOUT US SECTION
+.aboutus {
+	&__box {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 1em;
+
+		&-img {
+			&--img {
+				width: 100%;
+			}
+		}
+
+		&__text {
+			&--title {
+				@include section-h3-style;
+			}
+
+			&--text {
+				@include paragraph-style;
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.aboutus {
+		&__box {
+			flex-direction: row;
+			justify-content: space-between;
+
+			&__text {
+				width: 47%;
+				&-text {
+					text-align: right;
+				}
+			}
+
+			&-img {
+				width: 47%;
+			}
+		}
+
+		&__img {
+			margin-bottom: 0;
+		}
+	}
+}
+
+//ADVENTURE IMAGE
+
+.adventure {
+	position: relative;
+
+	.header-shadow {
+		background-color: $special-dark-shadow;
+	}
+
+	&-img {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		text-align: start;
+		height: 50vh;
+		background-image: url(../img/adventure.jpg);
+		background-size: cover;
+		background-position: center;
+		text-align: center;
+		z-index: 0;
+	}
+
+	&-text {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		color: $white;
+		border: 2px solid $white;
+		width: 60%;
+		padding: 0.6em;
+		text-align: center;
+		font-size: 4rem;
+		font-weight: 500;
+		z-index: 5;
+	}
+}
+
+//section offer 3 cards
+
+.offer {
+	&-text {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		margin-bottom: 2em;
+		@include paragraph-style;
+	}
+
+	&__card {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin: 3em 1em;
+		background-color: $white;
+		text-align: center;
+		border-radius: 8px;
+		box-shadow: 0px 5px 10px gray;
+		padding: 2em;
+		transition: transform 0.4s;
+
+		&:hover {
+			transform: scale(0.95);
+		}
+
+		&-title {
+			font-size: 3rem;
+			font-weight: 500;
+		}
+
+		&-cost {
+			padding: 0.3em 0;
+			font-size: 6rem;
+			font-weight: 600;
+		}
+
+		&-list {
+			text-align: start;
+			list-style: none;
+			font-size: 2.2rem;
+
+			&-item {
+				margin-bottom: 0.4em;
+
+				.yes {
+					color: $black;
+					font-weight: 500;
+				}
+				.no {
+					color: $gray3;
+				}
+
+				&:last-child {
+					margin-bottom: 1.5em;
+				}
+			}
+		}
+
+		&-btn {
+			padding: 0.5em 3em;
+			border-radius: 7px;
+			border: none;
+			font-size: 2rem;
+			font-weight: 500;
+			color: $gray3;
+			background-color: $white;
+			box-shadow: 0px 5px 10px gray;
+			transition: color 0.4s, background-color 0.4s, box-shadow 0.6s;
+
+			&:hover {
+				color: $black;
+				background-color: $button-hover;
+				box-shadow: 0px 5px 10px $button-hover;
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.offer {
+		&__cards {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+
+		&__card {
+			margin: 1em;
+			width: 45%;
+		}
+	}
+}
+
+@media (min-width: 1100px) {
+	.offer {
+		&__card {
+			width: 30%;
+			margin: 0 1em;
+		}
+	}
+}
+
+//gray pannel show offer
+.show-offer {
+	position: relative;
+	width: 100vw;
+	padding: 2em;
+	font-size: 2rem;
+	text-align: center;
+	background-color: $gray3;
+
+	a {
+		color: $black;
+		font-weight: 700;
+		span {
+			font-weight: 800;
+			text-decoration: underline;
+		}
+	}
+}

@@ -1,0 +1,87 @@
+@use 'utilities/media' as *;
+@use 'utilities/colors' as *;
+@use 'components/section-styles' as *;
+
+.offers {
+	padding-top: 150px;
+
+	.offers {
+		&__option {
+			margin: 2em 0;
+			overflow: hidden;
+			@include card-standard-style;
+
+			&-img {
+				width: 100%;
+				overflow: hidden;
+			}
+
+			&-info {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				padding: 2em;
+				z-index: 10;
+			}
+
+			&-heading {
+				@include section-h3-style;
+
+			}
+
+			&-text {
+				@include paragraph-style;
+				margin-bottom: 0.5em;
+				color: $gray3;
+			}
+		}
+	}
+}
+
+@media ($media-medium) {
+	.offers {
+		&__option {
+			&-img {
+				padding: 2em 2em 0 2em;
+			}
+		}
+	}
+}
+
+@media ($media-large) {
+	.offers {
+		&__option {
+			display: flex;
+			width: 100%;
+
+			&-img {
+				width: 50%;
+				height: 40%;
+				padding: 0;
+				margin: auto 1em;
+
+				&--right {
+					order: 1;
+				}
+			}
+
+			&-info {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+			}
+		}
+	}
+}
+
+@media ($media-xlarge) {
+	.offers {
+		&__option {
+			&-img {
+				margin: 2em;
+				object-fit: cover;
+				height: 300px;
+			}
+		}
+	}
+}

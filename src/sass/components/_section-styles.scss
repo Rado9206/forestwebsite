@@ -1,0 +1,72 @@
+@use '../utilities/colors' as *;
+
+@mixin logo-style {
+	font-size: 3.7rem;
+	font-weight: 450;
+	color: #000;
+	.fa-tree {
+		color: #555;
+	}
+}
+
+@mixin paragraph-style {
+	font-size: clamp(1.4rem, 1.1833rem + 1.2333vw, 2.2rem);
+	font-weight: 400;
+	line-height: 1.3em;
+
+	@media (min-width: 768px) {
+		line-height: 1.7em;
+	}
+}
+
+@mixin section-h3-style {
+	margin-bottom: 0.5em;
+	font-size: clamp(2.5rem, 1.5833rem + 2.9333vw, 3.6rem);
+}
+
+.header-shadow {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: $black-shadow;
+	z-index: 5;
+}
+
+.section-heading {
+	position: relative;
+	font-size: clamp(3.5rem, 2.25rem + 4vw, 5rem);
+	font-weight: 300;
+	text-transform: uppercase;
+	text-align: center;
+	color: $black;
+	letter-spacing: 2px;
+	margin-bottom: 1em;
+}
+
+//section padding
+.section-padding {
+	padding: 3em 2em;
+}
+
+@media (min-width: 768px) {
+	.section-padding {
+		padding: 4em 2em;
+	}
+}
+@media (min-width: 992px) {
+	.section-padding {
+		padding: 5em 2em;
+	}
+}
+
+@mixin card-standard-style {
+	margin: 3em 1em;
+	background-color: $white;
+	border-radius: 8px;
+	box-shadow: 0px 5px 10px $gray3;
+	transition: transform 0.4s;
+
+	&:hover {
+		transform: scale(0.98);
+	}
+}

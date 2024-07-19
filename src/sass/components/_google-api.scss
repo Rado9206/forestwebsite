@@ -1,0 +1,21 @@
+@use 'utilities/media' as *;
+
+.google-api {
+	align-items: center;
+	margin: 2em auto;
+}
+
+@media ($media-xsmall) {
+	.google-api {
+		width: 75vw;
+		height: 50vw;
+	}
+}
+
+@media ($media-large) {
+	.google-api {
+		margin: 0;
+		width: 100%;
+		height: 75%;
+	}
+}

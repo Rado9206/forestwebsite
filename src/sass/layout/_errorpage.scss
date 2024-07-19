@@ -1,0 +1,28 @@
+@use 'utilities/media' as *;
+@use 'utilities/colors' as *;
+@use 'components/section-styles' as *;
+@use 'components/buttons' as *;
+
+.errorpage {
+	padding-top: 150px;
+	height: 55vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: $black;
+
+	h3 {
+		@include section-h3-style;
+	}
+
+	p {
+		@include paragraph-style;
+	}
+	a {
+        margin-top: 1em;
+		color: $main-color;
+		font-weight: bold;
+        font-size: 3rem;
+	}
+}

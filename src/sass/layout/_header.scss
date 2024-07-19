@@ -1,0 +1,41 @@
+@use '../utilities/colors' as *;
+
+
+.header {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	height: 70vh;
+	text-align: start;
+	background-image: url(../img/hero-molo.jpg);
+	background-size: cover;
+	background-position: bottom -30% left 20%;
+	background-attachment: fixed;
+	z-index: -10;
+
+	&-text {
+		display: flex;
+		justify-content: center;
+		align-items: start;
+		flex-direction: column;
+		height: 100%;
+		transform: translateY(2em);
+		z-index: 5;
+		margin: 0 2em;
+
+		&__name,
+		&__tittle {
+			color: $white;
+		}
+
+		&__name {
+			font-weight: 300;
+			font-size: clamp(2.5rem, 1.5vw, 4rem);
+		}
+		&__tittle {
+			font-weight: 600;
+			font-size: clamp(3.5rem, 5vw, 4.5rem);
+		}
+	}
+}

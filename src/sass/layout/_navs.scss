@@ -1,0 +1,209 @@
+@use '../utilities/colors' as *;
+@use '../components/section-styles' as *;
+
+.hamburger {
+	position: fixed;
+	top: 1.5em;
+	right: 1.5em;
+	width: 75px;
+	height: 75px;
+	background: none;
+	border: 1px solid transparent;
+	cursor: pointer;
+	transition: transform 0.5s;
+	z-index: 1000;
+
+	&:focus {
+		outline: none;
+	}
+
+	.burger-icon,
+	.cross-icon {
+		.menu-bar {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			height: 4px;
+			width: 45px;
+			border-radius: 2px;
+		}
+	}
+
+	.burger-icon {
+		.menu-bar {
+			margin: 9px auto;
+			border: 1px solid $black;
+			background-color: $black;
+			padding: 1px;
+		}
+	}
+
+	.cross-icon {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		.menu-bar {
+			position: absolute;
+			border: 1px solid $main-color;
+			background-color: $main-color;
+		}
+		.left {
+			transform: rotate(45deg);
+		}
+		.right {
+			transform: rotate(-45deg);
+		}
+	}
+	.hide {
+		display: none;
+	}
+}
+//nav
+
+.nav {
+	&-mobile {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		background-color: rgb(255, 255, 255);
+		border-right: 4px solid $main-color;
+		border-left: 4px solid $main-color;
+		transform: translateX(-102%);
+		transition: transform 0.4s;
+		z-index: 100;
+
+		&--active {
+			transform: translateX(0);
+		}
+
+		&__link {
+			position: relative;
+			display: inline-block;
+			margin-bottom: 2em;
+			padding: 0.5em;
+			font-size: 2.3rem;
+			font-weight: 500;
+			color: #000;
+			text-transform: uppercase;
+			text-align: center;
+			text-decoration: none;
+			transition: color 0.3s;
+
+			&:hover {
+				color: $main-color;
+				font-weight: 700;
+			}
+
+			&::before,
+			&::after {
+				transition: 0.3s;
+			}
+
+			&::before,
+			&::after {
+				content: '';
+				position: absolute;
+				width: 0;
+				bottom: 0;
+				border-bottom: 3px solid $main-color;
+			}
+
+			&::before {
+				right: 50%;
+			}
+
+			&::after {
+				left: 50%;
+			}
+
+			&:hover::after,
+			&:hover::before {
+				width: 50%;
+			}
+		}
+	}
+
+	&-panel {
+		position: fixed;
+		width: 100%;
+		background-color: $white;
+		box-shadow: 0px 5px 10px #000;
+		z-index: 100;
+
+		&__box {
+			font-size: 2rem;
+			text-decoration: none;
+
+			.logo {
+				position: relative;
+				display: inline-block;
+				padding: 0.8em 0;
+				left: 50%;
+				transform: translateX(-50%);
+				overflow: visible;
+				@include logo-style;
+			}
+
+			&--link {
+				position: relative;
+				display: none;
+				text-align: center;
+				padding: 1.8em 1em;
+				font-size: 2.3rem;
+				text-decoration: none;
+				color: #000;
+				transition: background-color 0.3s, color 0.3s;
+
+				&:hover {
+					background-color: #000;
+					color: #fff;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.hamburger {
+		display: none;
+	}
+
+	.nav {
+		&-panel {
+			&__box {
+				display: grid;
+				grid-template-columns: repeat(8, 1fr);
+
+				.logo {
+					grid-column: 1/5;
+					grid-row: 1/2;
+					margin-left: 1em;
+				}
+				&--link {
+					display: inline-block;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 1300px) {
+	.nav {
+		&-panel {
+			&__box {
+				.logo {
+					margin: 0;
+				}
+			}
+		}
+	}
+}
