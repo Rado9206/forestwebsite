@@ -12,16 +12,16 @@
 @mixin paragraph-style {
 	font-size: clamp(1.4rem, 1.1833rem + 1.2333vw, 2.2rem);
 	font-weight: 400;
-	line-height: 1.3em;
+	line-height: 1.5em;
 
 	@media (min-width: 768px) {
-		line-height: 1.7em;
+		line-height: 1.8em;
 	}
 }
 
 @mixin section-h3-style {
 	margin-bottom: 0.5em;
-	font-size: clamp(2.5rem, 1.5833rem + 2.9333vw, 3.6rem);
+	font-size: clamp(2.3rem, 1.5833rem + 2.9333vw, 3.6rem);
 }
 
 .header-shadow {
