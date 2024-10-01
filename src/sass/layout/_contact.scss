@@ -39,7 +39,6 @@
 			max-width: 100%;
 			width: 100%;
 			min-width: 100%;
-
 		}
 
 		input,
@@ -79,6 +78,27 @@
 		grid-row: 4/5;
 		padding: 1em;
 	}
+
+	&__msg-status {
+		display: none;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		top: 50px;
+		padding: 30px;
+		width: 600px;
+		border-radius: 12px;
+		font-size: 24px;
+	}
+
+	.success {
+		display: flex;
+		background-color: $main-color;
+	}
+	.error {
+		display: flex;
+		background-color: red;
+	}
 }
 
 @media ($media-large) {
@@ -89,7 +109,6 @@
 			grid-template-rows: auto repeat(2, 1fr);
 			position: relative;
 			column-gap: 2em;
-
 
 			.section-heading {
 				grid-column: 1 / 3;
