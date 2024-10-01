@@ -52,23 +52,26 @@
                         potrzeby i przedstawi Ci propozycję szytą na miarę Twoich oczekiwań. 📨</p>
 
                 </div>
-                <form class="contact__form">
+                <form action="mail.php" method="post" class="contact__form">
 
                     <div class="contact__form-box">
                         <label for="name">Imię:</label>
-                        <input type="text" id="name" required>
+                        <input type="text" id="name" name="name" required>
                     </div>
                     <div class="contact__form-box">
                         <label for="name">Twój email:</label>
-                        <input type="email" id="mail" required>
+                        <input type="email" id="mail" name="email" required>
                     </div>
                     <div class="contact__form-box">
                         <label for="msg">Twoja wiadomość:</label>
-                        <textarea id="msg" cols="30" rows="10" required></textarea>
+                        <textarea id="msg" cols="30" rows="10" name="msg"></textarea>
                     </div>
 
                     <button type="submit" class="contact__form-btn button-basic-style">Wyślij</button>
                 </form>
+
+                <p class="contact__msg-status"></p>
+
             </div>
         </section>
     </main>
